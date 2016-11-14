@@ -1,0 +1,17 @@
+# Created by .ignore support plugin (hsz.mobi)
+*.class
+.mtj.tmp/
+*.jar
+*.war
+*.ear
+hs_err_pid*
+.gradle/
+build/
+gradle-app.setting
+!gradle-wrapper.jar
+.gradletasknamecache
+*.iws
+/out/
+.gitignore
+.idea/
+lib/build/

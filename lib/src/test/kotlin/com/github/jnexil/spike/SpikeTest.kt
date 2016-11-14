@@ -6,13 +6,12 @@ import org.jetbrains.spek.api.dsl.*
 import java.io.*
 import java.util.Arrays.*
 
-class SpikeTest: SubjectSpek<Spike>(spec = {
-    subject { Spike() }
+class SpikeTest: Spek(spec = {
     on("load single artifact without configuration") {
         val artifact = Artifact.get(type = "maven", value = "su.jfdev.sheaf:sheaf-kt:0.1.0")
         val targetFile = File("build/test", "libraries-for-testing")
         beforeEach {
-            subject.load(artifacts = artifact).writeTo(targetFile)
+            Spike(artifact).download(targetFile)
         }
         afterEach {
             targetFile.delete()

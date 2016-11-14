@@ -1,6 +1,10 @@
 package com.github.jnexil.spike
 
+import java.io.*
 
-class Spike {
-    fun load(vararg artifacts: Artifact): ArtifactSession = TODO("connect aether")
+
+class Spike(vararg val artifact: Artifact) {
+    fun download(outputDirectory: File) {
+        TODO("not implemented") //TODO
+    }
 }
