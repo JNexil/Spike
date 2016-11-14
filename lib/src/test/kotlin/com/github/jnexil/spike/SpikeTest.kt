@@ -11,7 +11,7 @@ class SpikeTest: Spek(spec = {
         val artifact = Artifact.get(type = "maven", value = "su.jfdev.sheaf:sheaf-kt:0.1.0")
         val targetFile = File("build/test", "libraries-for-testing")
         beforeEach {
-            Spike(artifact).download(targetFile)
+            Spike.downloading(artifact).into(targetFile).run()
         }
         afterEach {
             targetFile.delete()
