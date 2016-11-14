@@ -25,6 +25,7 @@ project("lib"){
     dependencies {
         compile group: 'org.apache.maven', name: 'maven-aether-provider', version: '3.3.9'
         compile "org.eclipse.aether:aether-api:$aether_version"
+        compile "org.eclipse.aether:aether-util:$aether_version"
         runtime "org.eclipse.aether:aether-impl:$aether_version"
         compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
         testCompile "org.jetbrains.spek:spek-api:1.0.89", "com.winterbe:expekt:0.5.0"
