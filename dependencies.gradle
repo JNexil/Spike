@@ -1,0 +1,79 @@
+ext.versions = [
+        kotlin      : "1.0.4",
+        kotlinx     : "0.3",
+        log4j       : "2.5",
+        jupiter     : "5.0.0-M2",
+        jplatform   : "1.0.0-M2",
+        dokka       : "0.9.9",
+        powermock   : "1.6.5",
+        ecollections: "8.0.0"
+]
+
+final def anci = "su.jfdev.anci:"
+ext.lib = [
+        ecollections: [
+                api  : "org.eclipse.collections:eclipse-collections-api:${versions.ecollections}",
+                impl : "org.eclipse.collections:eclipse-collections:${versions.ecollections}",
+                test : "org.eclipse.collections:eclipse-collections-testutils:${versions.ecollections}",
+                fjoin: "org.eclipse.collections:eclipse-collections-forkjoin:${versions.ecollections}"
+        ],
+        anci        : [
+                ekollections: anci + "ekollections-%s:0.1.0",
+                geography   : anci + "geography-%s:0.1.0",
+                registry    : anci + "registry-%s:0.1.0",
+                species     : anci + "species-%s:0.1.0",
+                logging     : anci + "logging-%s:0.2.0",
+                service     : anci + "service-%s:0.2.0-r3",
+                event       : anci + "event-%s:0.2.3-r1",
+                test        : anci + "test-%s:0.6.0-r1",
+                util        : anci + "util-%s:0.2.3"
+        ],
+        kotlin      : [
+                gradle: "org.jetbrains.kotlin:kotlin-gradle-plugin:${versions.kotlin}",
+                runtime: "org.jetbrains.kotlin:kotlin-runtime:${versions.kotlin}",
+                std    : "org.jetbrains.kotlin:kotlin-stdlib:${versions.kotlin}",
+                reflect: "org.jetbrains.kotlin:kotlin-reflect:${versions.kotlin}",
+                jdk8   : "org.jetbrains.kotlinx:kotlinx-support-jdk8:${versions.kotlinx}",
+                jdk7   : "org.jetbrains.kotlinx:kotlinx-support-jdk7:${versions.kotlinx}"
+        ],
+        spock     : 'org.spockframework:spock-core:1.1-groovy-2.4-rc-1',
+        jupiter   : [
+                api   : "org.junit.jupiter:junit-jupiter-api:${versions.jupiter}",
+                engine: "org.junit.jupiter:junit-jupiter-engine:${versions.jupiter}"
+        ],
+        junit     : [
+                legacy  : "junit:junit:4.12",
+                platform: "org.junit.platform:junit-platform-runner:${versions.jplatform}",
+                plugin  : "org.junit.platform:junit-platform-gradle-plugin:${versions.jplatform}"
+        ],
+        mockito   : "com.nhaarman:mockito-kotlin:0.9.0",
+        kotlintest: [
+                'io.kotlintest:kotlintest:1.3.5',
+                "com.nhaarman:mockito-kotlin:0.9.0",
+                "org.jetbrains.kotlin:kotlin-test:${versions.kotlin}"
+        ],
+        spek      : [
+                api     : "org.jetbrains.spek:spek-api:1.0.89",
+                junit   : "org.jetbrains.spek:spek-junit-platform-engine:1.0.89",
+                expekt  : "com.winterbe:expekt:0.5.0",
+                hamkrest: 'com.natpryce:hamkrest:1.2.3.0'
+        ],
+        esoteric  : [
+                kryo: "com.esotericsoftware:kryo:4.0.0",
+                net : "kryonet:kryonet:2.21"
+        ],
+        netty     : [
+                all: "io.netty:netty-all:4.1.1.Final"
+        ],
+        guava     : "com.google.guava:guava:19.0",
+        kodein    : 'com.github.salomonbrys.kodein:kodein:3.1.0',
+        protobuf  : "com.google.protobuf:protobuf-java:2.6.1",
+        dagger    : "com.google.dagger:dagger:2.2",
+        gson      : "com.google.code.gson:gson:2.7",
+        slf4j     : 'org.slf4j:slf4j-api:1.7.21',
+        log4j     : [
+                "org.apache.logging.log4j:log4j-core:${versions.log4j}",
+                "org.apache.logging.log4j:log4j-jul:${versions.log4j}"
+        ],
+        rxkotlin  : "io.reactivex:rxkotlin:0.60.0"
+]

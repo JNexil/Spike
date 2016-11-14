@@ -1,0 +1,32 @@
+buildscript {
+    ext.kotlin_version = '1.0.5'
+    ext.aether_version = '1.1.0'
+
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+project("lib"){
+    apply from: "../dependencies.gradle"
+    apply plugin: 'java'
+    apply plugin: 'kotlin'
+
+    group 'com.github.jnexil.spike'
+    version '0.1-SNAPSHOT'
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        compile group: 'org.apache.maven', name: 'maven-aether-provider', version: '3.3.9'
+        compile "org.eclipse.aether:aether-api:$aether_version"
+        runtime "org.eclipse.aether:aether-impl:$aether_version"
+        compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+        testCompile "org.jetbrains.spek:spek-api:1.0.89", "com.winterbe:expekt:0.5.0"
+    }
+}
