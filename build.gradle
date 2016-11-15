@@ -10,7 +10,7 @@ buildscript {
     }
 }
 
-project("lib"){
+project("lib") {
     apply from: "../dependencies.gradle"
     apply plugin: 'java'
     apply plugin: 'kotlin'
@@ -19,15 +19,25 @@ project("lib"){
     version '0.1-SNAPSHOT'
 
     repositories {
-        mavenCentral()
+        jcenter()
+        maven { url "https://dl.bintray.com/anci/maven" }
     }
 
     dependencies {
+        compile('su.jfdev.anci:logging-main:0.2.0'){
+            exclude group: "org.apache.logging.log4j"
+        }
         compile group: 'org.apache.maven', name: 'maven-aether-provider', version: '3.3.9'
         compile "org.eclipse.aether:aether-api:$aether_version"
         compile "org.eclipse.aether:aether-util:$aether_version"
-        runtime "org.eclipse.aether:aether-impl:$aether_version"
         compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+        compile "com.google.guava:guava:19.0"
+
+        runtime "org.eclipse.aether:aether-impl:$aether_version"
+
+        testRuntime group: 'ch.qos.logback', name: 'logback-classic', version: '1.1.7'
+        testRuntime 'su.jfdev.anci:logging-slf4j:0.2.0'
+        testRuntime 'su.jfdev.anci:service-impl:0.2.0-r3'
         testCompile "org.jetbrains.spek:spek-api:1.0.89", "com.winterbe:expekt:0.5.0"
     }
 }
