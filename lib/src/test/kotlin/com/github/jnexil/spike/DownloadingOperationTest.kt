@@ -23,8 +23,8 @@ class DownloadingOperationTest: Spek(spec = {
                 it("should contain single artifact"){
                     iteratedArtifacts.should.have.elements(artifact)
                 }
-                it("should have given file"){
-                    spike.into(file)
+                it("should have given output"){
+                    spike.output.should.equal(file)
                 }
             }
         }
@@ -53,8 +53,8 @@ class DownloadingOperationTest: Spek(spec = {
                 it("should contain single artifact") {
                     iteratedArtifacts.should.have.elements(first, second)
                 }
-                it("should have given file") {
-                    spike.into(file)
+                it("should have given output"){
+                    spike.output.should.equal(file)
                 }
             }
         }

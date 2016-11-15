@@ -11,8 +11,9 @@ interface Spike: () -> Unit, Runnable {
     val output: File
     val artifacts: Sequence<Artifact>
 
-    fun into(outputFile: File): Spike = object: Spike by this {
+    fun into(outputFile: File): Spike = object: Spike {
         override val output: File = outputFile
+        override val artifacts: Sequence<Artifact> get() = this@Spike.artifacts
     }
 
     fun downloading(artifact: Artifact): Spike = object: Spike {
